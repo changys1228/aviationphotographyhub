@@ -1,0 +1,205 @@
+body {
+    font-family: 'Noto Serif TC', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #444444;
+    color: #333;
+}
+header {
+    background-color: #5B5B5B;
+    color: white;
+    text-align: center;
+    padding: 150px 0;
+    position: relative; /* 添加此項以支持絕對定位的子元素 */
+}
+.header-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin: 0;
+}
+.header-content .subtitle {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+/* 添加綜合展區標題樣式 */
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 90;
+}
+
+.header-title h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.1em;
+    background: rgba(0, 0, 0, 0.4);
+    padding: clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+/* 返回按鈕樣式 - 更新美化版本 */
+.home-button {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(230, 240, 255, 0.9));
+    color: #1a365d;
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Noto Serif TC', serif;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    letter-spacing: 0.5px;
+}
+.home-button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(220, 235, 255, 1));
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    color: #0a2351;
+}
+.home-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.home-button::before {
+    content: "←";
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+.home-button:hover::before {
+    transform: translateX(-4px);
+}
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.nav-content h2 {
+    font-size: 2em;
+    margin: 0;
+}
+.nav-content p {
+    margin-top: 10px;
+    color: #666;
+}
+.gallery-container {
+    max-width: 12000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.gallery-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.gallery-item {
+    flex: 0 0 calc(50% - 20px);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+.gallery-item:hover .overlay {
+    height: 100%;
+}
+.overlay h3, .overlay p {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+}
+.overlay h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.overlay p {
+    font-size: 1em;
+    margin-top: 40px;
+}
+footer {
+    background-color: #1a2a3a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+@media (max-width: 768px) {
+    .gallery-row {
+        flex-direction: column;
+    }
+    
+    .gallery-item {
+        flex: 0 0 100%;
+    }
+    
+    /* 調整按鈕在移動設備上的樣式 */
+    .home-button {
+        top: 15px;
+        left: 15px;
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+    
+    .home-button::before {
+        font-size: 18px;
+        margin-right: 8px;
+    }
+    
+    /* 調整標題在移動設備上的樣式 */
+    .header-title h1 {
+        padding: 0.5rem 1rem;
+    }
+}

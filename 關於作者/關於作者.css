@@ -1,0 +1,170 @@
+/* 關於作者頁面樣式 */
+
+body.about-author {
+    background-color: #444444;
+    color: #333;
+    font-family: "微軟正黑體", Arial, sans-serif;
+}
+
+.home-button {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(230, 240, 255, 0.9));
+    color: #1a365d;
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Noto Serif TC', serif;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    letter-spacing: 0.5px;
+}
+.home-button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(220, 235, 255, 1));
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    color: #0a2351;
+}
+.home-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.home-button::before {
+    content: "←";
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+.home-button:hover::before {
+    transform: translateX(-4px);
+}
+.about-author-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.about-author-content h2 {
+    color: #EE9322CC;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.3em;
+}
+
+.about-author-content h3 {
+    color: #2980b9;
+    font-size: 1.8em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.author-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.author-details h3 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #34495e;
+}
+
+.author-details p {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+.author-bio p, .author-experience p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.contact-info p {
+    margin-bottom: 0.5em;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.portfolio-item {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+	
+	/* 調整按鈕在移動設備上的樣式 */
+    .home-button {
+        top: 15px;
+        left: 15px;
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+    
+    .home-button::before {
+        font-size: 18px;
+        margin-right: 8px;
+    }
+	
+    .about-author-content {
+        padding: 1em;
+    }
+
+    .author-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .author-image {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+
+    .author-details h3 {
+        font-size: 1.8em;
+    }
+
+    .about-author-content h2 {
+        font-size: 2em;
+    }
+
+    .about-author-content h3 {
+        font-size: 1.5em;
+    }
+}
